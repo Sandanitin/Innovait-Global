@@ -62,7 +62,7 @@ const Navbar = () => {
              >
                <Box
                  component="img"
-                 src="/src/images/logo.png"
+                 src="/logo.png"
                  alt="Innovait Global Logo"
                  sx={{
                    height: { xs: 45, sm: 50, md: 55 },
