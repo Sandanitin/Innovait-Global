@@ -122,38 +122,49 @@ const Home = () => {
 
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
-      {/* Stats Section */}
-      <Grid container spacing={3} sx={{ mb: 8 }}>
-        {stats.map((stat, index) => (
-          <Grid item xs={6} md={3} key={index}>
-            <Card 
-              sx={{ 
-                textAlign: 'center', 
-                p: 3,
-                background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%)',
-                border: '1px solid rgba(30, 58, 138, 0.1)',
-                transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)',
-                }
-              }}
-            >
-              <CardContent>
-                <Box sx={{ color: 'primary.main', mb: 1 }}>
-                  {stat.icon}
-                </Box>
-                <Typography variant="h4" component="div" sx={{ fontWeight: 700, color: 'primary.main', mb: 0.5 }}>
-                  {stat.number}
-                </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary', fontWeight: 500 }}>
-                  {stat.label}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+              {/* Stats Section */}
+              <Grid container spacing={{ xs: 2, md: 3 }} sx={{ mb: { xs: 6, md: 8 } }}>
+                {stats.map((stat, index) => (
+                  <Grid item xs={6} md={3} key={index}>
+                    <Card 
+                      sx={{ 
+                        textAlign: 'center', 
+                        p: { xs: 2, md: 3 },
+                        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%)',
+                        border: '1px solid rgba(30, 58, 138, 0.1)',
+                        transition: 'all 0.3s ease-in-out',
+                        minHeight: { xs: '100px', md: '120px' },
+                        '&:hover': {
+                          transform: 'translateY(-4px)',
+                          boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)',
+                        }
+                      }}
+                    >
+                      <CardContent sx={{ p: { xs: 1, md: 2 } }}>
+                        <Box sx={{ color: 'primary.main', mb: { xs: 0.5, md: 1 } }}>
+                          {stat.icon}
+                        </Box>
+                        <Typography variant="h4" component="div" sx={{ 
+                          fontWeight: 700, 
+                          color: 'primary.main', 
+                          mb: { xs: 0.25, md: 0.5 },
+                          fontSize: { xs: '1.5rem', md: '2rem' }
+                        }}>
+                          {stat.number}
+                        </Typography>
+                        <Typography variant="body2" sx={{ 
+                          color: 'text.secondary', 
+                          fontWeight: 500,
+                          fontSize: { xs: '0.75rem', md: '0.875rem' },
+                          lineHeight: 1.2
+                        }}>
+                          {stat.label}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                ))}
+              </Grid>
 
       {/* Innovation Quote Section */}
       <Paper 
@@ -185,28 +196,28 @@ const Home = () => {
         </Typography>
       </Box>
       
-      <Grid container spacing={6} sx={{ mb: 8 }}>
-        {services.map((service, index) => (
-          <Grid item xs={12} md={6} lg={4} key={index}>
-            <Card 
-              sx={{ 
-                height: '100%', 
-                overflow: 'hidden',
-                borderRadius: 4,
-                position: 'relative',
-                transition: 'all 0.4s ease-in-out',
-                '&:hover': {
-                  transform: 'translateY(-12px) scale(1.02)',
-                  boxShadow: '0 20px 60px rgba(30, 58, 138, 0.2)',
-                  '& .service-image': {
-                    transform: 'scale(1.1)',
-                  },
-                  '& .service-content': {
-                    backgroundColor: 'rgba(30, 58, 138, 0.05)',
-                  }
-                }
-              }}
-            >
+              <Grid container spacing={{ xs: 3, md: 6 }} sx={{ mb: { xs: 6, md: 8 } }}>
+                {services.map((service, index) => (
+                  <Grid item xs={12} md={6} lg={4} key={index}>
+                    <Card 
+                      sx={{ 
+                        height: '100%', 
+                        overflow: 'hidden',
+                        borderRadius: { xs: 3, md: 4 },
+                        position: 'relative',
+                        transition: 'all 0.4s ease-in-out',
+                        '&:hover': {
+                          transform: 'translateY(-12px) scale(1.02)',
+                          boxShadow: '0 20px 60px rgba(30, 58, 138, 0.2)',
+                          '& .service-image': {
+                            transform: 'scale(1.1)',
+                          },
+                          '& .service-content': {
+                            backgroundColor: 'rgba(30, 58, 138, 0.05)',
+                          }
+                        }
+                      }}
+                    >
               <Box sx={{ position: 'relative', overflow: 'hidden' }}>
                 <CardMedia
                   component="img"
@@ -243,45 +254,68 @@ const Home = () => {
                 </Box>
               </Box>
               
-              <CardContent 
-                className="service-content"
-                sx={{ 
-                  p: 4,
-                  transition: 'background-color 0.3s ease-in-out',
-                }}
-              >
-                <Typography variant="h5" component="h3" gutterBottom sx={{ fontWeight: 700, mb: 2, color: 'primary.main' }}>
-                  {service.title}
-                </Typography>
-                <Typography variant="body1" paragraph sx={{ mb: 3, color: 'text.secondary', lineHeight: 1.7 }}>
-                  {service.description}
-                </Typography>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: service.color,
-                      color: 'white',
-                      borderRadius: 3,
-                      px: 3,
-                      py: 1.5,
-                      fontWeight: 600,
-                      textTransform: 'none',
-                      '&:hover': {
-                        backgroundColor: service.color,
-                        transform: 'translateY(-2px)',
-                        boxShadow: `0 8px 25px ${service.color}40`,
-                      },
-                      transition: 'all 0.3s ease-in-out',
-                    }}
-                  >
-                    Explore Service
-                  </Button>
-                  <Typography variant="body2" sx={{ color: service.color, fontWeight: 600 }}>
-                    Learn More →
-                  </Typography>
-                </Box>
-              </CardContent>
+                      <CardContent 
+                        className="service-content"
+                        sx={{ 
+                          p: { xs: 3, md: 4 },
+                          transition: 'background-color 0.3s ease-in-out',
+                        }}
+                      >
+                        <Typography variant="h5" component="h3" gutterBottom sx={{ 
+                          fontWeight: 700, 
+                          mb: { xs: 1.5, md: 2 }, 
+                          color: 'primary.main',
+                          fontSize: { xs: '1.2rem', md: '1.5rem' }
+                        }}>
+                          {service.title}
+                        </Typography>
+                        <Typography variant="body1" paragraph sx={{ 
+                          mb: { xs: 2, md: 3 }, 
+                          color: 'text.secondary', 
+                          lineHeight: { xs: 1.5, md: 1.7 },
+                          fontSize: { xs: '0.9rem', md: '1rem' }
+                        }}>
+                          {service.description}
+                        </Typography>
+                        <Box sx={{ 
+                          display: 'flex', 
+                          flexDirection: { xs: 'column', sm: 'row' },
+                          justifyContent: 'space-between', 
+                          alignItems: { xs: 'stretch', sm: 'center' },
+                          gap: { xs: 2, sm: 0 }
+                        }}>
+                          <Button
+                            variant="contained"
+                            sx={{
+                              backgroundColor: service.color,
+                              color: 'white',
+                              borderRadius: 3,
+                              px: { xs: 2, md: 3 },
+                              py: { xs: 1, md: 1.5 },
+                              fontWeight: 600,
+                              textTransform: 'none',
+                              fontSize: { xs: '0.9rem', md: '1rem' },
+                              width: { xs: '100%', sm: 'auto' },
+                              '&:hover': {
+                                backgroundColor: service.color,
+                                transform: 'translateY(-2px)',
+                                boxShadow: `0 8px 25px ${service.color}40`,
+                              },
+                              transition: 'all 0.3s ease-in-out',
+                            }}
+                          >
+                            Explore Service
+                          </Button>
+                          <Typography variant="body2" sx={{ 
+                            color: service.color, 
+                            fontWeight: 600,
+                            fontSize: { xs: '0.8rem', md: '0.875rem' },
+                            textAlign: { xs: 'center', sm: 'right' }
+                          }}>
+                            Learn More →
+                          </Typography>
+                        </Box>
+                      </CardContent>
             </Card>
           </Grid>
         ))}

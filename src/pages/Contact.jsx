@@ -124,24 +124,27 @@ const Contact = () => {
         </Typography>
       </Box>
 
-      <Grid container spacing={{ xs: 4, md: 6 }}>
+      <Grid container spacing={{ xs: 3, md: 6 }}>
         {/* Contact Form */}
         <Grid item xs={12} lg={8}>
           <Paper elevation={0} sx={{ 
-            p: { xs: 4, md: 6 },
+            p: { xs: 3, md: 6 },
             background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.02) 0%, rgba(245, 158, 11, 0.02) 100%)',
             border: '1px solid rgba(30, 58, 138, 0.1)',
-            borderRadius: 4,
+            borderRadius: { xs: 3, md: 4 },
           }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
-              <SendIcon sx={{ fontSize: 50, color: 'primary.main', mr: 2 }} />
-              <Typography variant="h4" component="h2" sx={{ fontWeight: 700 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: { xs: 3, md: 4 } }}>
+              <SendIcon sx={{ fontSize: { xs: 40, md: 50 }, color: 'primary.main', mr: 2 }} />
+              <Typography variant="h4" component="h2" sx={{ 
+                fontWeight: 700,
+                fontSize: { xs: '1.5rem', md: '2rem' }
+              }}>
                 Send Us a Message
               </Typography>
             </Box>
             
             <form onSubmit={handleSubmit}>
-              <Grid container spacing={3}>
+              <Grid container spacing={{ xs: 2, md: 3 }}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     fullWidth
@@ -246,11 +249,12 @@ const Contact = () => {
                     size="large"
                     endIcon={<SendIcon />}
                     sx={{
-                      px: 6,
-                      py: 2,
-                      fontSize: '1.1rem',
+                      px: { xs: 4, md: 6 },
+                      py: { xs: 1.5, md: 2 },
+                      fontSize: { xs: '1rem', md: '1.1rem' },
                       fontWeight: 600,
                       borderRadius: 3,
+                      width: { xs: '100%', sm: 'auto' },
                       background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #f59e0b 100%)',
                       '&:hover': {
                         background: 'linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #d97706 100%)',

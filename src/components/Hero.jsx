@@ -79,98 +79,110 @@ const Hero = () => {
         },
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 3, py: 8 }}>
-        <Grid container spacing={6} alignItems="center">
-          {/* Main Content */}
-          <Grid item xs={12} lg={7}>
-            <Box sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
-              <Typography 
-                variant="h1" 
-                component="h1" 
-                gutterBottom 
-                sx={{ 
-                  fontWeight: 800,
-                  mb: 3,
-                  color: 'white',
-                  fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
-                  lineHeight: 1.1,
-                  textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-                }}
-              >
-                Empowering Innovation.
-                <br />
-                <span style={{ color: '#fbbf24' }}>Delivering Excellence.</span>
-              </Typography>
+              <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 3, py: { xs: 4, md: 6, lg: 8 } }}>
+                <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
+                  {/* Main Content */}
+                  <Grid item xs={12} lg={7}>
+                    <Box sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
+                      <Typography 
+                        variant="h1" 
+                        component="h1" 
+                        gutterBottom 
+                        sx={{ 
+                          fontWeight: 800,
+                          mb: { xs: 2, md: 3 },
+                          color: 'white',
+                          fontSize: { xs: '1.8rem', sm: '2.2rem', md: '3rem', lg: '3.5rem' },
+                          lineHeight: { xs: 1.2, md: 1.1 },
+                          textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+                        }}
+                      >
+                        Empowering Innovation.
+                        <br />
+                        <span style={{ color: '#fbbf24' }}>Delivering Excellence.</span>
+                      </Typography>
+                      
+                      <Typography 
+                        variant="h5" 
+                        component="h2" 
+                        sx={{ 
+                          mb: { xs: 3, md: 4 }, 
+                          color: 'rgba(255, 255, 255, 0.95)',
+                          lineHeight: { xs: 1.5, md: 1.6 },
+                          fontWeight: 400,
+                          fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
+                          textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+                        }}
+                      >
+                        We provide comprehensive IT solutions, consulting services, and training programs to help businesses thrive in the digital era.
+                      </Typography>
               
-              <Typography 
-                variant="h5" 
-                component="h2" 
-                sx={{ 
-                  mb: 4, 
-                  color: 'rgba(255, 255, 255, 0.95)',
-                  lineHeight: 1.6,
-                  fontWeight: 400,
-                  fontSize: { xs: '1.1rem', md: '1.3rem' },
-                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-                }}
-              >
-                We provide comprehensive IT solutions, consulting services, and training programs to help businesses thrive in the digital era.
-              </Typography>
-              
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: { xs: 'center', lg: 'flex-start' }, mb: 6 }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  endIcon={<ArrowForwardIcon />}
-                  sx={{
-                    backgroundColor: 'white',
-                    color: 'primary.main',
-                    px: 4,
-                    py: 2,
-                    fontSize: '1.1rem',
-                    fontWeight: 600,
-                    borderRadius: 3,
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-                    '&:hover': {
-                      backgroundColor: 'rgba(255,255,255,0.95)',
-                      transform: 'translateY(-3px)',
-                      boxShadow: '0 12px 40px rgba(0, 0, 0, 0.4)',
-                    },
-                    transition: 'all 0.3s ease-in-out',
-                  }}
-                >
-                  Get Started Today
-                </Button>
-                
-                <Button
-                  variant="outlined"
-                  size="large"
-                  sx={{
-                    borderColor: 'white',
-                    color: 'white',
-                    px: 4,
-                    py: 2,
-                    fontSize: '1.1rem',
-                    fontWeight: 600,
-                    borderRadius: 3,
-                    borderWidth: 2,
-                    '&:hover': {
-                      backgroundColor: 'rgba(255,255,255,0.1)',
-                      borderColor: 'white',
-                      transform: 'translateY(-3px)',
-                    },
-                    transition: 'all 0.3s ease-in-out',
-                  }}
-                >
-                  Learn More
-                </Button>
-              </Box>
+                      <Box sx={{ 
+                        display: 'flex', 
+                        gap: { xs: 1.5, md: 2 }, 
+                        flexWrap: 'wrap', 
+                        justifyContent: { xs: 'center', lg: 'flex-start' }, 
+                        mb: { xs: 4, md: 6 },
+                        flexDirection: { xs: 'column', sm: 'row' },
+                        alignItems: 'center'
+                      }}>
+                        <Button
+                          variant="contained"
+                          size="large"
+                          endIcon={<ArrowForwardIcon />}
+                          sx={{
+                            backgroundColor: 'white',
+                            color: 'primary.main',
+                            px: { xs: 3, md: 4 },
+                            py: { xs: 1.5, md: 2 },
+                            fontSize: { xs: '1rem', md: '1.1rem' },
+                            fontWeight: 600,
+                            borderRadius: 3,
+                            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                            width: { xs: '100%', sm: 'auto' },
+                            maxWidth: { xs: '280px', sm: 'none' },
+                            '&:hover': {
+                              backgroundColor: 'rgba(255,255,255,0.95)',
+                              transform: 'translateY(-3px)',
+                              boxShadow: '0 12px 40px rgba(0, 0, 0, 0.4)',
+                            },
+                            transition: 'all 0.3s ease-in-out',
+                          }}
+                        >
+                          Get Started Today
+                        </Button>
+                        
+                        <Button
+                          variant="outlined"
+                          size="large"
+                          sx={{
+                            borderColor: 'white',
+                            color: 'white',
+                            px: { xs: 3, md: 4 },
+                            py: { xs: 1.5, md: 2 },
+                            fontSize: { xs: '1rem', md: '1.1rem' },
+                            fontWeight: 600,
+                            borderRadius: 3,
+                            borderWidth: 2,
+                            width: { xs: '100%', sm: 'auto' },
+                            maxWidth: { xs: '280px', sm: 'none' },
+                            '&:hover': {
+                              backgroundColor: 'rgba(255,255,255,0.1)',
+                              borderColor: 'white',
+                              transform: 'translateY(-3px)',
+                            },
+                            transition: 'all 0.3s ease-in-out',
+                          }}
+                        >
+                          Learn More
+                        </Button>
+                      </Box>
             </Box>
           </Grid>
           
           {/* Stats Cards */}
           <Grid item xs={12} lg={5}>
-            <Grid container spacing={2}>
+            <Grid container spacing={{ xs: 1.5, md: 2 }}>
               {stats.map((stat, index) => (
                 <Grid item xs={6} key={index}>
                   <Card
@@ -178,12 +190,13 @@ const Hero = () => {
                       backgroundColor: stat.bgColor,
                       backdropFilter: 'blur(20px)',
                       border: `2px solid ${stat.color}`,
-                      borderRadius: 4,
+                      borderRadius: { xs: 3, md: 4 },
                       textAlign: 'center',
-                      p: 2,
+                      p: { xs: 1.5, md: 2 },
                       transition: 'all 0.4s ease-in-out',
                       position: 'relative',
                       overflow: 'hidden',
+                      minHeight: { xs: '120px', md: '140px' },
                       '&:hover': {
                         backgroundColor: `${stat.color}30`,
                         transform: 'translateY(-8px) scale(1.05)',
@@ -211,11 +224,11 @@ const Hero = () => {
                       }
                     }}
                   >
-                    <CardContent sx={{ py: 3, position: 'relative', zIndex: 1 }}>
+                    <CardContent sx={{ py: { xs: 2, md: 3 }, position: 'relative', zIndex: 1 }}>
                       <Box 
                         className="stat-icon"
                         sx={{ 
-                          mb: 2,
+                          mb: { xs: 1, md: 2 },
                           color: stat.color,
                           transition: 'all 0.3s ease-in-out',
                         }}
@@ -228,10 +241,11 @@ const Hero = () => {
                         component="div" 
                         sx={{ 
                           fontWeight: 800, 
-                          mb: 1, 
+                          mb: { xs: 0.5, md: 1 }, 
                           color: 'white',
                           textShadow: '0 2px 4px rgba(0,0,0,0.3)',
                           transition: 'color 0.3s ease-in-out',
+                          fontSize: { xs: '1.5rem', md: '2rem' },
                         }}
                       >
                         {stat.number}
@@ -241,9 +255,10 @@ const Hero = () => {
                         sx={{ 
                           color: 'rgba(255, 255, 255, 0.95)', 
                           fontWeight: 600,
-                          fontSize: '0.9rem',
+                          fontSize: { xs: '0.75rem', md: '0.9rem' },
                           textTransform: 'uppercase',
                           letterSpacing: '0.5px',
+                          lineHeight: 1.2,
                         }}
                       >
                         {stat.label}
