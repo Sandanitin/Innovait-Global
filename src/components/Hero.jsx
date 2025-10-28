@@ -44,9 +44,10 @@ const Hero = () => {
     <Box
       sx={{
         position: 'relative',
-        minHeight: '90vh',
+        minHeight: '10vh',
         display: 'flex',
         alignItems: 'center',
+        // mt: '50px',
         backgroundImage: 'url("https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

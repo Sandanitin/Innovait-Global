@@ -45,45 +45,58 @@ const Navbar = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Toolbar sx={{ py: { xs: 1, md: 1.5 } }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+        <Toolbar sx={{ py: 1 }}>
+           <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
              <Box
-               component="img"
-               src="/src/images/logo.png"
-               alt="Innovait Global Logo"
+               component={Link}
+               to="/"
                sx={{
-                 width: { xs: 350, sm: 450, md: 550 },
-                 height: { xs: 52, sm: 67, md: 82 },
-                 mr: { xs: 1, sm: 2, md: 3 },
-                 objectFit: 'contain',
+                 display: 'flex',
+                 alignItems: 'center',
+                 textDecoration: 'none',
+                 '&:hover': {
+                   transform: 'scale(1.02)',
+                   transition: 'transform 0.2s ease-in-out',
+                 }
                }}
-             />
-            {!isMobile && (
-              <Typography
-                variant="h5"
-                component={Link}
-                to="/"
-                sx={{
-                  fontWeight: 700,
-                  color: 'primary.main',
-                  textDecoration: 'none',
-                  background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  fontSize: { sm: '1.2rem', md: '1.4rem' },
-                  '&:hover': {
-                    background: 'linear-gradient(135deg, #1e40af 0%, #2563eb 100%)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                  }
-                }}
-              >
-                {/* Innovait Global */}
-              </Typography>
-            )}
-          </Box>
+             >
+               <Box
+                 component="img"
+                 src="/src/images/logo.png"
+                 alt="Innovait Global Logo"
+                 sx={{
+                   height: { xs: 45, sm: 50, md: 55 },
+                   width: 'auto',
+                   objectFit: 'contain',
+                   mr: 2,
+                   filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.1))',
+                 }}
+               />
+               {!isMobile && (
+                 <Typography
+                   variant="h5"
+                   sx={{
+                     fontWeight: 700,
+                     color: '#1e3a8a',
+                     fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' },
+                     letterSpacing: '-0.02em',
+                     background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)',
+                     backgroundClip: 'text',
+                     WebkitBackgroundClip: 'text',
+                     WebkitTextFillColor: 'transparent',
+                     '&:hover': {
+                       background: 'linear-gradient(135deg, #1e40af 0%, #2563eb 100%)',
+                       backgroundClip: 'text',
+                       WebkitBackgroundClip: 'text',
+                       WebkitTextFillColor: 'transparent',
+                     }
+                   }}
+                 >
+                   {/* Innovait Global */}
+                 </Typography>
+               )}
+             </Box>
+           </Box>
 
           {isMobile ? (
             <IconButton
@@ -124,13 +137,7 @@ const Navbar = () => {
         </Toolbar>
 
         {isMobile && mobileMenuOpen && (
-          <Box sx={{ 
-            pb: 3,
-            px: 2,
-            backgroundColor: 'rgba(255, 255, 255, 0.98)',
-            backdropFilter: 'blur(10px)',
-            borderTop: '1px solid rgba(0, 0, 0, 0.1)',
-          }}>
+          <Box sx={{ pb: 2 }}>
             {navItems.map((item) => (
               <MenuItem
                 key={item.path}
@@ -140,17 +147,9 @@ const Navbar = () => {
                 sx={{
                   color: location.pathname === item.path ? 'primary.main' : 'text.primary',
                   fontWeight: location.pathname === item.path ? 600 : 500,
-                  py: 2,
+                  py: 1.5,
                   px: 3,
-                  mx: 1,
-                  borderRadius: 2,
                   backgroundColor: location.pathname === item.path ? 'rgba(30, 58, 138, 0.1)' : 'transparent',
-                  fontSize: '1.1rem',
-                  '&:hover': {
-                    backgroundColor: 'rgba(30, 58, 138, 0.1)',
-                    borderRadius: 2,
-                  },
-                  transition: 'all 0.3s ease-in-out',
                 }}
               >
                 {item.label}
