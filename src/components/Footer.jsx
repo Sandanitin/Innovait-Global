@@ -53,16 +53,16 @@ const Footer = () => {
           {/* Company Info */}
           <Grid item xs={12} md={4}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-              <Avatar
-                src="/src/images/logo.png"
-                alt="Innovait Global Logo"
-                sx={{
-                  width: { xs: 60, sm: 70 },
-                  height: { xs: 60, sm: 70 },
-                  mr: 2,
-                  borderRadius: 2,
-                }}
-              />
+               <Avatar
+                 src="/src/images/logo.png"
+                 alt="Innovait Global Logo"
+                 sx={{
+                   width: { xs: 100, sm: 120 },
+                   height: { xs: 100, sm: 120 },
+                   mr: 2,
+                   borderRadius: 2,
+                 }}
+               />
               <Typography variant="h5" component="h3" sx={{ fontWeight: 700 }}>
                 Innovait Global
               </Typography>

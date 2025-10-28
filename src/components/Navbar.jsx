@@ -47,17 +47,17 @@ const Navbar = () => {
       <Container maxWidth="lg">
         <Toolbar sx={{ py: { xs: 1, md: 1.5 } }}>
           <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-            <Box
-              component="img"
-              src="/src/images/logo.png"
-              alt="Innovait Global Logo"
-              sx={{
-                width: { xs: 200, sm: 280, md: 350 },
-                height: { xs: 30, sm: 42, md: 52 },
-                mr: { xs: 1, sm: 2, md: 3 },
-                objectFit: 'contain',
-              }}
-            />
+             <Box
+               component="img"
+               src="/src/images/logo.png"
+               alt="Innovait Global Logo"
+               sx={{
+                 width: { xs: 350, sm: 450, md: 550 },
+                 height: { xs: 52, sm: 67, md: 82 },
+                 mr: { xs: 1, sm: 2, md: 3 },
+                 objectFit: 'contain',
+               }}
+             />
             {!isMobile && (
               <Typography
                 variant="h5"
@@ -80,7 +80,7 @@ const Navbar = () => {
                   }
                 }}
               >
-                Innovait Global
+                {/* Innovait Global */}
               </Typography>
             )}
           </Box>
