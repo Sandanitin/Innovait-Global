@@ -13,8 +13,11 @@ import {
   Star as StarIcon,
   ArrowForward as ArrowForwardIcon
 } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
+  const navigate = useNavigate();
+  
   const services = [
     {
       icon: <BusinessIcon sx={{ fontSize: 50, color: 'primary.main' }} />,
@@ -238,6 +241,7 @@ const Services = () => {
                   <Button
                     variant="contained"
                     endIcon={<ArrowForwardIcon />}
+                    onClick={() => navigate('/contact')}
                     sx={{
                       backgroundColor: service.color,
                       color: 'white',
@@ -409,6 +413,7 @@ const Services = () => {
           <Button
             variant="contained"
             size="large"
+            onClick={() => navigate('/contact')}
             sx={{
               backgroundColor: 'white',
               color: 'primary.main',

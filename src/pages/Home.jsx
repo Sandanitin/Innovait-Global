@@ -18,8 +18,11 @@ import {
   BugReport as BugReportIcon,
   Code as CodeIcon
 } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
       icon: <CloudIcon sx={{ fontSize: 50, color: 'primary.main' }} />,
@@ -29,25 +32,11 @@ const Home = () => {
       image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
-      icon: <SchoolIcon sx={{ fontSize: 50, color: 'secondary.main' }} />,
-      title: 'Education Services',
-      description: 'The IT industry demands its professionals to not only master their specializations but also stay updated with latest technologies.',
-      color: '#34a853',
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    },
-    {
       icon: <CodeIcon sx={{ fontSize: 50, color: 'primary.main' }} />,
       title: 'Application Development',
       description: 'Majority of the companies require applications in a wide range of usabilities. We develop scalable and efficient solutions.',
       color: '#fbbc04',
       image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      icon: <PublicIcon sx={{ fontSize: 50, color: 'secondary.main' }} />,
-      title: 'Public Sector Projects',
-      description: 'From optimizing infrastructure to modernizing digital services and unlocking the full potential of technology.',
-      color: '#ea4335',
-      image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       icon: <EngineeringIcon sx={{ fontSize: 50, color: 'primary.main' }} />,
@@ -196,24 +185,24 @@ const Home = () => {
         </Typography>
       </Box>
       
-              <Grid container spacing={{ xs: 3, md: 6 }} sx={{ mb: { xs: 6, md: 8 } }}>
+              <Grid container spacing={{ xs: 2, md: 3 }} sx={{ mb: { xs: 6, md: 8 } }}>
                 {services.map((service, index) => (
-                  <Grid item xs={12} md={6} lg={4} key={index}>
+                  <Grid item xs={12} sm={6} md={3} key={index}>
                     <Card 
                       sx={{ 
                         height: '100%', 
                         overflow: 'hidden',
-                        borderRadius: { xs: 3, md: 4 },
+                        borderRadius: { xs: 2, md: 3 },
                         position: 'relative',
-                        transition: 'all 0.4s ease-in-out',
+                        transition: 'all 0.3s ease-in-out',
                         '&:hover': {
-                          transform: 'translateY(-12px) scale(1.02)',
-                          boxShadow: '0 20px 60px rgba(30, 58, 138, 0.2)',
+                          transform: 'translateY(-8px) scale(1.01)',
+                          boxShadow: '0 15px 40px rgba(30, 58, 138, 0.15)',
                           '& .service-image': {
-                            transform: 'scale(1.1)',
+                            transform: 'scale(1.05)',
                           },
                           '& .service-content': {
-                            backgroundColor: 'rgba(30, 58, 138, 0.05)',
+                            backgroundColor: 'rgba(30, 58, 138, 0.03)',
                           }
                         }
                       }}
@@ -221,13 +210,13 @@ const Home = () => {
               <Box sx={{ position: 'relative', overflow: 'hidden' }}>
                 <CardMedia
                   component="img"
-                  height="250"
+                  height="180"
                   image={service.image}
                   alt={service.title}
                   className="service-image"
                   sx={{ 
                     objectFit: 'cover',
-                    transition: 'transform 0.4s ease-in-out',
+                    transition: 'transform 0.3s ease-in-out',
                   }}
                 />
                 <Box
@@ -246,8 +235,8 @@ const Home = () => {
                   <Box sx={{ 
                     backgroundColor: 'rgba(255, 255, 255, 0.9)', 
                     borderRadius: '50%', 
-                    p: 2,
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                    p: 1.5,
+                    boxShadow: '0 6px 20px rgba(0, 0, 0, 0.15)',
                   }}>
                     {service.icon}
                   </Box>
@@ -257,23 +246,23 @@ const Home = () => {
                       <CardContent 
                         className="service-content"
                         sx={{ 
-                          p: { xs: 3, md: 4 },
+                          p: { xs: 2, md: 3 },
                           transition: 'background-color 0.3s ease-in-out',
                         }}
                       >
-                        <Typography variant="h5" component="h3" gutterBottom sx={{ 
+                        <Typography variant="h6" component="h3" gutterBottom sx={{ 
                           fontWeight: 700, 
-                          mb: { xs: 1.5, md: 2 }, 
+                          mb: { xs: 1, md: 1.5 }, 
                           color: 'primary.main',
-                          fontSize: { xs: '1.2rem', md: '1.5rem' }
+                          fontSize: { xs: '1rem', md: '1.1rem' }
                         }}>
                           {service.title}
                         </Typography>
-                        <Typography variant="body1" paragraph sx={{ 
-                          mb: { xs: 2, md: 3 }, 
+                        <Typography variant="body2" paragraph sx={{ 
+                          mb: { xs: 1.5, md: 2 }, 
                           color: 'text.secondary', 
-                          lineHeight: { xs: 1.5, md: 1.7 },
-                          fontSize: { xs: '0.9rem', md: '1rem' }
+                          lineHeight: { xs: 1.4, md: 1.5 },
+                          fontSize: { xs: '0.8rem', md: '0.85rem' }
                         }}>
                           {service.description}
                         </Typography>
@@ -282,38 +271,53 @@ const Home = () => {
                           flexDirection: { xs: 'column', sm: 'row' },
                           justifyContent: 'space-between', 
                           alignItems: { xs: 'stretch', sm: 'center' },
-                          gap: { xs: 2, sm: 0 }
+                          gap: { xs: 1.5, sm: 0 }
                         }}>
                           <Button
                             variant="contained"
+                            size="small"
+                            onClick={() => navigate('/services')}
                             sx={{
                               backgroundColor: service.color,
                               color: 'white',
-                              borderRadius: 3,
-                              px: { xs: 2, md: 3 },
-                              py: { xs: 1, md: 1.5 },
+                              borderRadius: 2,
+                              px: { xs: 1.5, md: 2 },
+                              py: { xs: 0.8, md: 1 },
                               fontWeight: 600,
                               textTransform: 'none',
-                              fontSize: { xs: '0.9rem', md: '1rem' },
+                              fontSize: { xs: '0.75rem', md: '0.8rem' },
                               width: { xs: '100%', sm: 'auto' },
                               '&:hover': {
                                 backgroundColor: service.color,
-                                transform: 'translateY(-2px)',
-                                boxShadow: `0 8px 25px ${service.color}40`,
+                                transform: 'translateY(-1px)',
+                                boxShadow: `0 6px 20px ${service.color}40`,
                               },
                               transition: 'all 0.3s ease-in-out',
                             }}
                           >
-                            Explore Service
+                            Explore
                           </Button>
-                          <Typography variant="body2" sx={{ 
-                            color: service.color, 
-                            fontWeight: 600,
-                            fontSize: { xs: '0.8rem', md: '0.875rem' },
-                            textAlign: { xs: 'center', sm: 'right' }
-                          }}>
+                          <Button
+                            variant="text"
+                            size="small"
+                            onClick={() => navigate('/services')}
+                            sx={{ 
+                              color: service.color, 
+                              fontWeight: 600,
+                              fontSize: { xs: '0.7rem', md: '0.75rem' },
+                              textAlign: { xs: 'center', sm: 'right' },
+                              textTransform: 'none',
+                              justifyContent: { xs: 'center', sm: 'flex-end' },
+                              p: 0,
+                              minWidth: 'auto',
+                              '&:hover': {
+                                backgroundColor: 'transparent',
+                                textDecoration: 'underline',
+                              }
+                            }}
+                          >
                             Learn More →
-                          </Typography>
+                          </Button>
                         </Box>
                       </CardContent>
             </Card>
@@ -497,6 +501,7 @@ const Home = () => {
           <Button
             variant="contained"
             size="large"
+            onClick={() => navigate('/contact')}
             sx={{
               backgroundColor: 'white',
               color: 'primary.main',

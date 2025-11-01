@@ -14,39 +14,6 @@ import {
 } from '@mui/icons-material';
 
 const About = () => {
-  const coreValues = [
-    {
-      title: 'Integrity',
-      description: 'We do what\'s right, even when no one is watching.',
-      icon: <StarIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      title: 'Accountability',
-      description: 'We own every outcome — from strategy to execution.',
-      icon: <GroupIcon sx={{ fontSize: 40, color: 'secondary.main' }} />,
-      image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      title: 'Innovation',
-      description: 'We thrive on creativity and challenge conventional limits.',
-      icon: <StarIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      title: 'Collaboration',
-      description: 'Together we achieve more — with our teams, partners, and clients.',
-      icon: <GroupIcon sx={{ fontSize: 40, color: 'secondary.main' }} />,
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      title: 'Excellence',
-      description: 'Our benchmark is not meeting expectations — it\'s exceeding them.',
-      icon: <StarIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    }
-  ];
-
   const stats = [
     { number: '500+', label: 'Projects Delivered', icon: <TrendingUpIcon sx={{ fontSize: 30 }} /> },
     { number: '99.9%', label: 'Client Satisfaction', icon: <StarIcon sx={{ fontSize: 30 }} /> },
@@ -225,46 +192,6 @@ const About = () => {
           </Grid>
         </Grid>
       </Paper>
-
-      {/* Core Values Section */}
-      <Typography variant="h4" component="h2" gutterBottom align="center" sx={{ mb: 4, fontWeight: 700 }}>
-        Our Core Values
-      </Typography>
-      <Grid container spacing={4} sx={{ mb: { xs: 6, md: 8 } }}>
-        {coreValues.map((value, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card sx={{ 
-              height: '100%', 
-              overflow: 'hidden',
-              borderRadius: 4,
-              transition: 'all 0.3s ease-in-out',
-              '&:hover': {
-                transform: 'translateY(-8px)',
-                boxShadow: '0 20px 40px rgba(30, 58, 138, 0.15)',
-              }
-            }}>
-              <CardMedia
-                component="img"
-                height="200"
-                image={value.image}
-                alt={value.title}
-                sx={{ objectFit: 'cover' }}
-              />
-              <CardContent sx={{ textAlign: 'center', p: 4 }}>
-                <Box sx={{ mb: 2 }}>
-                  {value.icon}
-                </Box>
-                <Typography variant="h6" component="h3" gutterBottom sx={{ fontWeight: 600 }}>
-                  {value.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
-                  {value.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
 
       {/* Global Presence Section */}
       <Paper elevation={0} sx={{ 
