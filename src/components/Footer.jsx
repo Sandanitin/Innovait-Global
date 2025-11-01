@@ -54,18 +54,18 @@ const Footer = () => {
           <Grid item xs={12} md={4}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                <Avatar
-                 src="/src/images/logo.png"
+                 src="/logo.png"
                  alt="Innovait Global Logo"
                  sx={{
-                   width: { xs: 100, sm: 120 },
-                   height: { xs: 100, sm: 120 },
+                   width: { xs: 120, sm: 150 },
+                   height: 'auto',
                    mr: 2,
                    borderRadius: 2,
                  }}
                />
-              <Typography variant="h5" component="h3" sx={{ fontWeight: 700 }}>
+              {/* <Typography variant="h5" component="h3" sx={{ fontWeight: 700 }}>
                 Innovait Global
-              </Typography>
+              </Typography> */}
             </Box>
             <Typography variant="body2" paragraph sx={{ mb: 3, opacity: 0.8, lineHeight: 1.6 }}>
               Empowering businesses through innovative technology solutions. We deliver excellence in IT consulting,
