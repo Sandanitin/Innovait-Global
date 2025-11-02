@@ -1,234 +1,437 @@
-import React from 'react';
-import { Box, Typography, Container, Grid, Link, IconButton, Divider, Avatar } from '@mui/material';
+import React, { useState, useEffect } from 'react';
 import { 
+  Box, 
+  Container, 
+  Grid, 
+  Typography, 
+  Link, 
+  IconButton,
+  Divider,
+  Tooltip,
+  useTheme,
+  useMediaQuery
+} from '@mui/material';
+import {
+  Facebook as FacebookIcon,
+  Twitter as TwitterIcon,
+  LinkedIn as LinkedInIcon,
+  GitHub as GitHubIcon,
   Email as EmailIcon,
   Phone as PhoneIcon,
   LocationOn as LocationIcon,
-  LinkedIn as LinkedInIcon,
-  Twitter as TwitterIcon,
-  Facebook as FacebookIcon,
-  Instagram as InstagramIcon
+  ArrowUpward as ArrowUpwardIcon
 } from '@mui/icons-material';
 
-const Footer = () => {
+const ProfessionalFooter = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const [showScroll, setShowScroll] = useState(false);
   const currentYear = new Date().getFullYear();
 
+  // Scroll to top functionality
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.pageYOffset > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Footer data
+  const companyInfo = {
+    name: "",
+    description: "Delivering innovative technology solutions to drive your business forward in the digital age.",
+    logo: "/logo.png" // Using actual logo image
+  };
+
   const quickLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'About Us', href: '/about' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' },
+    { title: "About Us", url: "/about" },
+    { title: "Services", url: "/services" },
+    { title: "Contact", url: "/contact" }
   ];
 
-  const itSolutions = [
-    'Application Development',
-    'Cloud Solutions',
-    'Data Analytics',
-    'AI/ML Training',
-    'QA & Testing',
-    'DevOps Services',
+  const services = [
+    { title: "IT Consulting & Strategy", url: "/services" },
+    { title: "Application Development & Modernization", url: "/services" },
+    { title: "Cloud & Infrastructure Solutions", url: "/services" },
+    { title: "Data Engineering & Analytics", url: "/services" },
+    { title: "QA, DevOps & Automation", url: "/services" },
+    { title: "IT Staffing & Talent Solutions", url: "/services" }
   ];
 
-  const consultingServices = [
-    'IT Staff Augmentation',
-    'IT Healthcare',
-    'Master Vendor Program',
-    'Talent Acquisition',
-    'Project Management',
-    'Technology Consulting',
+  const contactInfo = [
+    // { icon: <EmailIcon fontSize="small" />, text: "contact@techsolutions.com", type: "email" },
+    { icon: <LocationIcon fontSize="small" />, text: "Contact form to reach us", type: "form" }
   ];
+
+  const socialLinks = [
+    { icon: <LinkedInIcon />, name: "LinkedIn", url: "https://linkedin.com" },
+    { icon: <TwitterIcon />, name: "Twitter", url: "https://twitter.com" },
+    { icon: <FacebookIcon />, name: "Facebook", url: "https://facebook.com" },
+    { icon: <GitHubIcon />, name: "GitHub", url: "https://github.com" }
+  ];
+
+  const handleContactClick = (type, value) => {
+    switch (type) {
+      case 'email':
+        window.location.href = `mailto:${value}`;
+        break;
+      case 'form':
+        window.location.href = '/contact';
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: 'grey.900',
-        color: 'white',
-        py: { xs: 4, md: 6 },
-        mt: 'auto',
+        backgroundColor: theme.palette.background.paper,
+        color: theme.palette.text.primary,
+        pt: 8,
+        pb: 4,
+        position: 'relative',
+        borderTop: `1px solid ${theme.palette.divider}`
       }}
     >
+      {/* Scroll to top button */}
+      {showScroll && (
+        <Tooltip title="Back to top" arrow>
+          <IconButton
+            onClick={scrollToTop}
+            sx={{
+              position: 'fixed',
+              bottom: 32,
+              right: 32,
+              backgroundColor: theme.palette.primary.main,
+              color: theme.palette.primary.contrastText,
+              '&:hover': {
+                backgroundColor: theme.palette.primary.dark,
+              },
+              boxShadow: 3,
+              zIndex: 1000,
+              width: 48,
+              height: 48,
+            }}
+          >
+            <ArrowUpwardIcon />
+          </IconButton>
+        </Tooltip>
+      )}
+
       <Container maxWidth="lg">
-        <Grid container spacing={{ xs: 4, md: 6 }}>
+        <Grid container spacing={4}>
           {/* Company Info */}
           <Grid item xs={12} md={4}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-               <Avatar
-                 src="/logo.png"
-                 alt="Innovait Global Logo"
-                 sx={{
-                   width: { xs: 120, sm: 150 },
-                   height: 'auto',
-                   mr: 2,
-                   borderRadius: 2,
-                 }}
-               />
-              {/* <Typography variant="h5" component="h3" sx={{ fontWeight: 700 }}>
-                Innovait Global
-              </Typography> */}
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <Box
+                component="img"
+                src={companyInfo.logo}
+                alt="InnovaIT Logo"
+                sx={{
+                  width: 120,
+                  height: 60,
+                  borderRadius: 1,
+                  mr: 2
+                }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  console.log('Logo failed to load');
+                }}
+              />
+              <Typography variant="h6" component="div" sx={{ fontWeight: 700 }}>
+                {companyInfo.name}
+              </Typography>
             </Box>
-            <Typography variant="body2" paragraph sx={{ mb: 3, opacity: 0.8, lineHeight: 1.6 }}>
-              Empowering businesses through innovative technology solutions. We deliver excellence in IT consulting,
-              cloud services, and digital transformation to help organizations thrive in the digital era.
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 3, lineHeight: 1.7 }}>
+              {companyInfo.description}
             </Typography>
             
-            {/* Contact Info */}
-            <Box sx={{ mb: 3 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                <EmailIcon sx={{ fontSize: 20, color: 'primary.light' }} />
-                <Typography variant="body2" sx={{ color: 'grey.300' }}>
-                  admin@innovaitglobal.com
-                </Typography>
-              </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                <PhoneIcon sx={{ fontSize: 20, color: 'primary.light' }} />
-                <Typography variant="body2" sx={{ color: 'grey.300' }}>
-                  (+1) 732 985 5100
-                </Typography>
-              </Box>
-              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
-                <LocationIcon sx={{ fontSize: 20, color: 'primary.light', mt: 0.5 }} />
-                <Typography variant="body2" sx={{ color: 'grey.300' }}>
-                  100 Metroplex Drive, Suite #207<br />
-                  Edison, NJ 08817, USA
-                </Typography>
-              </Box>
-            </Box>
-
             {/* Social Media */}
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <IconButton sx={{ color: 'white', '&:hover': { color: 'primary.light' } }}>
-                <LinkedInIcon />
-              </IconButton>
-              <IconButton sx={{ color: 'white', '&:hover': { color: 'primary.light' } }}>
-                <TwitterIcon />
-              </IconButton>
-              <IconButton sx={{ color: 'white', '&:hover': { color: 'primary.light' } }}>
-                <FacebookIcon />
-              </IconButton>
-              <IconButton sx={{ color: 'white', '&:hover': { color: 'primary.light' } }}>
-                <InstagramIcon />
-              </IconButton>
+            <Box sx={{ display: 'flex', gap: 1, mb: 3 }}>
+              {socialLinks.map((social, index) => (
+                <Tooltip key={index} title={social.name} arrow>
+                  <IconButton
+                    component="a"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      color: theme.palette.text.secondary,
+                      backgroundColor: theme.palette.action.hover,
+                      '&:hover': {
+                        color: theme.palette.primary.main,
+                        backgroundColor: theme.palette.action.selected
+                      },
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    {social.icon}
+                  </IconButton>
+                </Tooltip>
+              ))}
             </Box>
           </Grid>
 
           {/* Quick Links */}
           <Grid item xs={12} sm={6} md={2}>
-            <Typography variant="h6" component="h3" gutterBottom sx={{ fontWeight: 600, mb: 3 }}>
+            <Typography 
+              variant="subtitle1" 
+              component="h3" 
+              sx={{ 
+                fontWeight: 600, 
+                mb: 3,
+                color: theme.palette.text.primary,
+                fontSize: '1.1rem',
+                position: 'relative',
+                '&:after': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  bottom: -8,
+                  width: 40,
+                  height: 3,
+                  backgroundColor: theme.palette.primary.main,
+                }
+              }}
+            >
               Quick Links
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              {quickLinks.map((link) => (
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+              {quickLinks.map((link, index) => (
                 <Link
-                  key={link.label}
-                  href={link.href}
+                  key={index}
+                  href={link.url}
+                  color="text.secondary"
+                  underline="hover"
                   sx={{
-                    color: 'grey.300',
-                    textDecoration: 'none',
                     fontSize: '0.9rem',
-                    '&:hover': {
-                      color: 'primary.light',
-                      textDecoration: 'underline',
+                    '&:hover': { 
+                      color: theme.palette.primary.main,
+                      transform: 'translateX(4px)'
                     },
-                    transition: 'color 0.3s ease',
+                    transition: 'all 0.3s ease',
+                    display: 'inline-block'
                   }}
                 >
-                  {link.label}
+                  {link.title}
                 </Link>
               ))}
             </Box>
           </Grid>
 
-          {/* IT Solutions */}
+          {/* Services */}
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" component="h3" gutterBottom sx={{ fontWeight: 600, mb: 3 }}>
-              IT Solutions
+            <Typography 
+              variant="subtitle1" 
+              component="h3" 
+              sx={{ 
+                fontWeight: 600, 
+                mb: 3,
+                color: theme.palette.text.primary,
+                fontSize: '1.1rem',
+                position: 'relative',
+                '&:after': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  bottom: -8,
+                  width: 40,
+                  height: 3,
+                  backgroundColor: theme.palette.primary.main,
+                }
+              }}
+            >
+              Our Services
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              {itSolutions.map((solution) => (
-                <Typography
-                  key={solution}
-                  variant="body2"
+            <Box 
+              sx={{ 
+                display: 'grid', 
+                gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', 
+                gap: 1.5 
+              }}
+            >
+              {services.map((service, index) => (
+                <Link
+                  key={index}
+                  href={service.url}
+                  underline="none"
                   sx={{
-                    color: 'grey.300',
-                    fontSize: '0.9rem',
+                    display: 'flex',
+                    alignItems: 'center',
                     '&:hover': {
-                      color: 'primary.light',
-                      cursor: 'pointer',
-                    },
-                    transition: 'color 0.3s ease',
+                      '& .service-icon': {
+                        backgroundColor: theme.palette.primary.light,
+                        color: theme.palette.primary.contrastText
+                      }
+                    }
                   }}
                 >
-                  {solution}
-                </Typography>
+                  <Box
+                    className="service-icon"
+                    sx={{
+                      width: 24,
+                      height: 24,
+                      borderRadius: '4px',
+                      backgroundColor: theme.palette.action.hover,
+                      color: theme.palette.primary.main,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      mr: 1.5,
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    <Box component="span" sx={{ fontSize: '0.7rem', fontWeight: 'bold' }}>→</Box>
+                  </Box>
+                  <Typography 
+                    variant="body2" 
+                    color="text.secondary"
+                    sx={{
+                      fontSize: '0.9rem',
+                      '&:hover': {
+                        color: theme.palette.primary.main,
+                        cursor: 'pointer'
+                      },
+                      transition: 'color 0.3s ease'
+                    }}
+                  >
+                    {service.title}
+                  </Typography>
+                </Link>
               ))}
             </Box>
           </Grid>
 
-          {/* Consulting Services */}
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" component="h3" gutterBottom sx={{ fontWeight: 600, mb: 3 }}>
-              Consulting Services
+          {/* Contact Info */}
+          <Grid item xs={12} md={3}>
+            <Typography 
+              variant="subtitle1" 
+              component="h3" 
+              sx={{ 
+                fontWeight: 600, 
+                mb: 3,
+                color: theme.palette.text.primary,
+                fontSize: '1.1rem',
+                position: 'relative',
+                '&:after': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  bottom: -8,
+                  width: 40,
+                  height: 3,
+                  backgroundColor: theme.palette.primary.main,
+                }
+              }}
+            >
+              Contact Us
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              {consultingServices.map((service) => (
-                <Typography
-                  key={service}
-                  variant="body2"
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              {contactInfo.map((contact, index) => (
+                <Box
+                  key={index}
+                  onClick={() => handleContactClick(contact.type, contact.text)}
                   sx={{
-                    color: 'grey.300',
-                    fontSize: '0.9rem',
-                    '&:hover': {
-                      color: 'primary.light',
-                      cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: 1.5,
+                    cursor: 'pointer',
+                    '&:hover': { 
+                      '& .contact-icon': {
+                        backgroundColor: theme.palette.primary.main,
+                        color: theme.palette.primary.contrastText
+                      },
+                      '& .contact-text': {
+                        color: theme.palette.primary.main
+                      }
                     },
-                    transition: 'color 0.3s ease',
+                    transition: 'all 0.3s ease',
                   }}
                 >
-                  {service}
-                </Typography>
+                  <Box
+                    className="contact-icon"
+                    sx={{
+                      width: 36,
+                      height: 36,
+                      borderRadius: '50%',
+                      backgroundColor: theme.palette.action.hover,
+                      color: theme.palette.primary.main,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    {contact.icon}
+                  </Box>
+                  <Typography 
+                    variant="body2" 
+                    color="text.secondary"
+                    className="contact-text"
+                    sx={{
+                      transition: 'color 0.3s ease',
+                      lineHeight: 1.5
+                    }}
+                  >
+                    {contact.text}
+                  </Typography>
+                </Box>
               ))}
             </Box>
           </Grid>
         </Grid>
 
-        <Divider sx={{ borderColor: 'grey.700', my: 4 }} />
+        <Divider sx={{ my: 4, borderColor: 'divider' }} />
 
-        {/* Bottom Bar */}
+        {/* Copyright */}
         <Box
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
+            flexDirection: { xs: 'column', sm: 'row' },
             justifyContent: 'space-between',
             alignItems: 'center',
             gap: 2,
+            textAlign: { xs: 'center', sm: 'left' }
           }}
         >
-          <Typography variant="body2" sx={{ color: 'grey.400' }}>
-            © {currentYear} Innovait Global, Inc. All rights reserved.
+          <Typography variant="body2" color="text.secondary">
+            © {currentYear} {companyInfo.name}. All rights reserved.
           </Typography>
-          <Box sx={{ display: 'flex', gap: 3 }}>
+          <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap', justifyContent: { xs: 'center', sm: 'flex-end' } }}>
             <Link
               href="/privacy"
-              sx={{
-                color: 'grey.400',
-                textDecoration: 'none',
-                fontSize: '0.875rem',
-                '&:hover': { color: 'primary.light' },
-              }}
+              color="text.secondary"
+              variant="body2"
+              underline="hover"
+              sx={{ '&:hover': { color: 'primary.main' } }}
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              sx={{
-                color: 'grey.400',
-                textDecoration: 'none',
-                fontSize: '0.875rem',
-                '&:hover': { color: 'primary.light' },
-              }}
+              color="text.secondary"
+              variant="body2"
+              underline="hover"
+              sx={{ '&:hover': { color: 'primary.main' } }}
             >
               Terms of Service
+            </Link>
+            <Link
+              href="/cookies"
+              color="text.secondary"
+              variant="body2"
+              underline="hover"
+              sx={{ '&:hover': { color: 'primary.main' } }}
+            >
+              Cookie Policy
             </Link>
           </Box>
         </Box>
@@ -237,4 +440,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default ProfessionalFooter;

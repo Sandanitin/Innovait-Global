@@ -135,27 +135,6 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    {
-      icon: <EmailIcon sx={{ fontSize: 24, color: 'primary.main' }} />,
-      title: 'Email Us',
-      details: 'admin@innovaitglobal.com',
-      description: 'Send us an email anytime',
-      color: '#4285f4'
-    },
-    {
-      icon: <PhoneIcon sx={{ fontSize: 24, color: 'secondary.main' }} />,
-      title: 'Call Us',
-      details: '(+1) 732 985 5100',
-      description: 'Mon-Fri from 9am to 6pm',
-      color: '#34a853'
-    },
-    {
-      icon: <LocationIcon sx={{ fontSize: 24, color: 'primary.main' }} />,
-      title: 'Visit Us',
-      details: '100 Metroplex Drive, Suite #207',
-      description: 'Edison, NJ 08817, USA',
-      color: '#fbbc04'
-    }
   ];
 
   const services = [
@@ -618,7 +597,7 @@ const Contact = () => {
         borderRadius: 3,
       }}>
         <Typography variant="h5" component="h2" gutterBottom align="center" sx={{ mb: 3, fontWeight: 700, fontSize: '1.5rem' }}>
-          Why Choose Innovait Global?
+          Why Choose InnovaITGlobal?
         </Typography>
         
         <Grid container spacing={1.5}>

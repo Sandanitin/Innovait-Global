@@ -38,7 +38,7 @@ const About = () => {
           color: 'primary.main',
           fontSize: { xs: '2rem', md: '3rem' }
         }}>
-          About Innovait Global
+          About InnovaIT Global
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom sx={{ 
           mb: 4, 

@@ -400,7 +400,7 @@ const Services = () => {
             Partnership Promise
           </Typography>
           <Typography variant="h6" paragraph sx={{ mb: 3, opacity: 0.9 }}>
-            At <strong>Innovait Global</strong>, we measure our success by your success.
+            At <strong>InnovaIT Global</strong>, we measure our success by your success.
           </Typography>
           <Typography variant="body1" paragraph sx={{ 
             fontSize: '1.1rem', 

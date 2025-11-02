@@ -89,7 +89,7 @@ const Home = () => {
     {
       icon: <TrendingUpIcon sx={{ fontSize: 30, color: 'primary.main' }} />,
       title: 'Proven Management Strategies',
-      description: 'Innovait Global\'s client-centric strategy combines deep business insight as well as technology impact on various industries and business models.',
+      description: 'InnovaIT Global\'s client-centric strategy combines deep business insight as well as technology impact on various industries and business models.',
       image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
@@ -171,7 +171,7 @@ const Home = () => {
           "For an advanced world for you and me, Innovation holds the key"
         </Typography>
         <Typography variant="h6" paragraph sx={{ fontSize: '1.2rem', lineHeight: 1.8, color: 'text.secondary' }}>
-          Innovation: The driving force behind a smarter, more advanced world for all. Unlocking new possibilities, and shaping the future with relentless dedication. We lead the way in progress at Innovait Global—seamlessly and boldly.
+          Innovation: The driving force behind a smarter, more advanced world for all. Unlocking new possibilities, and shaping the future with relentless dedication. We lead the way in progress at InnovaIT Global—seamlessly and boldly.
         </Typography>
       </Paper>
 
@@ -373,7 +373,7 @@ const Home = () => {
         Experience and innovation in a single touch.
       </Typography>
       <Typography variant="body1" paragraph align="center" sx={{ mb: 6, fontSize: '1.1rem', lineHeight: 1.8 }}>
-        Innovait Global has structured itself strategically to provide some of the most cutting-edge solutions for its clients.
+     InnovaIT Global has structured itself strategically to provide some of the most cutting-edge solutions for its clients.
       </Typography>
 
       <Grid container spacing={4} sx={{ mb: 8 }}>

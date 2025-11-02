@@ -5,12 +5,13 @@ import { CssBaseline, Box } from '@mui/material';
 import theme from './theme';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Footer from './components/Footer';
+
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import ProfessionalFooter from './components/Footer';
 
 function AppContent() {
   return (
@@ -27,7 +28,7 @@ function AppContent() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer />
+      <ProfessionalFooter></ProfessionalFooter>
     </Box>
   );
 }
