@@ -102,7 +102,7 @@ const Navbar = () => {
                      transition: 'all 0.3s ease-in-out',
                    }}
                  >
-                   InnovaIT
+                   {/* InnovaIT */}
                  </Typography>
                )}
              </Box>
