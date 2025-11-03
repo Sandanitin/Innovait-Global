@@ -114,7 +114,7 @@ const About = () => {
               component="img"
               height="300"
               image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="Innovait Global Team"
+              alt="InnovaIT Team"
               sx={{ borderRadius: 3, objectFit: 'cover' }}
             />
           </Grid>

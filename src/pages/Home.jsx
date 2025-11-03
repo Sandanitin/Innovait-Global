@@ -327,14 +327,14 @@ const Home = () => {
 
       {/* Why Choose Us Section */}
       <Typography variant="h3" component="h2" gutterBottom align="center" sx={{ mb: 2, fontWeight: 700 }}>
-        WHY CHOOSE INNOVAIT?
+        WHY CHOOSE InnovaIT?
       </Typography>
       <Typography variant="h4" component="h3" gutterBottom align="center" sx={{ mb: 6, fontWeight: 600, color: 'text.secondary' }}>
         Your vision. Our innovation: IT solutions.
       </Typography>
       
       <Typography variant="body1" paragraph align="center" sx={{ mb: 6, fontSize: '1.1rem', lineHeight: 1.8 }}>
-        Innovait focuses on delivering quality work with maintaining a cordial relationship with its clients. Our excellent record of innovative Staffing and Consulting solutions make us reliable partners for all your IT needs.
+        InnovaIT focuses on delivering quality work with maintaining a cordial relationship with its clients. Our excellent record of innovative Staffing and Consulting solutions make us reliable partners for all your IT needs.
       </Typography>
 
       <Grid container spacing={4} sx={{ mb: 8 }}>
@@ -421,7 +421,7 @@ const Home = () => {
           Build Beneficial Partnership With Us
         </Typography>
         <Typography variant="body1" paragraph align="center" sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.8 }}>
-          Build beneficial partnership with us and gain access to the best IT talent across USA. Innovait has strategically aligned itself to develop some of the most innovative solutions for its clients. From providing turnkey project-based solutions to on-demand staff augmentation to application development services, Innovait can be your long-term strategic partner.
+          Build beneficial partnership with us and gain access to the best IT talent across USA. InnovaIT has strategically aligned itself to develop some of the most innovative solutions for its clients. From providing turnkey project-based solutions to on-demand staff augmentation to application development services, InnovaIT can be your long-term strategic partner.
         </Typography>
         <Box sx={{ textAlign: 'center' }}>
           <Button
