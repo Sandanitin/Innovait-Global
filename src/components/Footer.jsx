@@ -403,7 +403,26 @@ const ProfessionalFooter = () => {
           }}
         >
           <Typography variant="body2" color="text.secondary">
-            © {currentYear} {companyInfo.name}. All rights reserved.
+            © {currentYear} InnovaIT Global LLC. All rights reserved.
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Designed and developed by{' '}
+            <Link 
+              href="https://www.vikrin.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              sx={{
+                color: theme.palette.primary.main,
+                textDecoration: 'none',
+                fontWeight: 500,
+                '&:hover': {
+                  textDecoration: 'underline',
+                  color: theme.palette.primary.dark,
+                }
+              }}
+            >
+              Vikrin
+            </Link>
           </Typography>
           <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap', justifyContent: { xs: 'center', sm: 'flex-end' } }}>
             <Link
@@ -423,15 +442,6 @@ const ProfessionalFooter = () => {
               sx={{ '&:hover': { color: 'primary.main' } }}
             >
               Terms of Service
-            </Link>
-            <Link
-              href="/cookies"
-              color="text.secondary"
-              variant="body2"
-              underline="hover"
-              sx={{ '&:hover': { color: 'primary.main' } }}
-            >
-              Cookie Policy
             </Link>
           </Box>
         </Box>

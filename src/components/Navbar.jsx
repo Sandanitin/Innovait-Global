@@ -55,8 +55,8 @@ const Navbar = () => {
                  alignItems: 'center',
                  textDecoration: 'none',
                  '&:hover': {
-                   transform: 'scale(1.02)',
-                   transition: 'transform 0.2s ease-in-out',
+                   transform: 'scale(1.03)',
+                   transition: 'transform 0.3s ease-in-out',
                  }
                }}
              >
@@ -65,34 +65,44 @@ const Navbar = () => {
                  src="/logo.png"
                  alt="InnovaIT Logo"
                  sx={{
-                   height: { xs: 45, sm: 50, md: 55 },
+                   height: { xs: 40, sm: 45, md: 50 },
                    width: 'auto',
                    objectFit: 'contain',
-                   mr: 2,
-                   filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.1))',
+                   mr: 1.5,
+                   filter: 'drop-shadow(0 4px 12px rgba(30, 58, 138, 0.2))',
+                   transition: 'all 0.3s ease-in-out',
+                   borderRadius: '8px',
+                   border: '2px solid rgba(30, 58, 138, 0.1)',
+                   '&:hover': {
+                     filter: 'drop-shadow(0 6px 16px rgba(30, 58, 138, 0.3))',
+                     borderColor: 'rgba(30, 58, 138, 0.3)',
+                   }
                  }}
                />
                {!isMobile && (
                  <Typography
                    variant="h5"
                    sx={{
-                     fontWeight: 700,
+                     fontWeight: 800,
                      color: '#1e3a8a',
-                     fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' },
-                     letterSpacing: '-0.02em',
+                     fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.6rem' },
+                     letterSpacing: '-0.03em',
                      background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)',
                      backgroundClip: 'text',
                      WebkitBackgroundClip: 'text',
                      WebkitTextFillColor: 'transparent',
+                     textShadow: '0 2px 4px rgba(30, 58, 138, 0.1)',
                      '&:hover': {
                        background: 'linear-gradient(135deg, #1e40af 0%, #2563eb 100%)',
                        backgroundClip: 'text',
                        WebkitBackgroundClip: 'text',
                        WebkitTextFillColor: 'transparent',
-                     }
+                       textShadow: '0 3px 6px rgba(30, 58, 138, 0.2)',
+                     },
+                     transition: 'all 0.3s ease-in-out',
                    }}
                  >
-                   {/* Innovait Global */}
+                   InnovaIT
                  </Typography>
                )}
              </Box>

@@ -86,13 +86,15 @@ const Hero = () => {
                   fontWeight: 900,
                   mb: { xs: 2, md: 3 },
                   color: 'white',
-                  fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.8rem', lg: '4.5rem' },
-                  lineHeight: { xs: 1.2, md: 1.1 },
+                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem', lg: '4.2rem' },
+                  lineHeight: { xs: 1.15, md: 1.1 },
                   animation: 'fadeInUp 0.8s ease-out',
                   '& > span': {
                     display: 'block',
-                    marginTop: { xs: '8px', sm: '12px' },
-                  }
+                    marginTop: { xs: '6px', sm: '10px' },
+                  },
+                  textAlign: 'center',
+                  px: { xs: 2, sm: 0 }
                 }}
               >
                 Empowering Innovation.
@@ -101,6 +103,7 @@ const Hero = () => {
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   fontWeight: 900,
+                  fontFamily: 'inherit',
                 }}>
                   Delivering Excellence.
                 </span>
@@ -110,41 +113,133 @@ const Hero = () => {
                 variant="h5" 
                 component="p" 
                 sx={{ 
-                  mb: { xs: 4, md: 5 }, 
+                  mb: { xs: 3, md: 5 }, 
                   color: 'rgba(255, 255, 255, 0.95)',
-                  lineHeight: { xs: 1.6, md: 1.7 },
+                  lineHeight: { xs: 1.5, md: 1.7 },
                   fontWeight: 400,
-                  fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.3rem' },
+                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                   maxWidth: { xs: '100%', sm: '90%', md: '70%' },
                   mx: 'auto',
                   animation: 'fadeInUp 1.1s ease-out',
+                  textAlign: 'center',
+                  px: { xs: 2, sm: 0 }
                 }}
               >
                 We provide comprehensive IT solutions, consulting services, and training programs to help businesses thrive in the digital era.
               </Typography>
               
               {/* Key Benefits */}
-              <Grid container spacing={2} sx={{ mb: 5, maxWidth: { md: '70%' }, mx: 'auto' }}>
+              <Grid 
+                container 
+                spacing={{ xs: 1.5, sm: 2, md: 3 }} 
+                sx={{ 
+                  mb: { xs: 4, sm: 5 }, 
+                  maxWidth: { xs: '100%', sm: '90%', md: '70%' }, 
+                  mx: 'auto',
+                  px: { xs: 2, sm: 0 }
+                }}
+              >
                 <Grid item xs={12} sm={4}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <CheckCircleIcon sx={{ color: '#fbbf24', mr: 1 }} />
-                    <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.95)', fontWeight: 500 }}>
+                  <Box 
+                    sx={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      p: { xs: 1.5, sm: 2 },
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      borderRadius: 2,
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      minHeight: { xs: '50px', sm: '60px' }
+                    }}
+                  >
+                    <CheckCircleIcon 
+                      sx={{ 
+                        color: '#fbbf24', 
+                        mr: { xs: 0.8, sm: 1 },
+                        fontSize: { xs: '1.2rem', sm: '1.5rem' }
+                      }} 
+                    />
+                    <Typography 
+                      variant="body1" 
+                      sx={{ 
+                        color: 'rgba(255, 255, 255, 0.95)', 
+                        fontWeight: 600,
+                        fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
+                        textAlign: 'center',
+                        lineHeight: 1.3
+                      }}
+                    >
                       Expert Team
                     </Typography>
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <CheckCircleIcon sx={{ color: '#fbbf24', mr: 1 }} />
-                    <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.95)', fontWeight: 500 }}>
+                  <Box 
+                    sx={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      p: { xs: 1.5, sm: 2 },
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      borderRadius: 2,
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      minHeight: { xs: '50px', sm: '60px' }
+                    }}
+                  >
+                    <CheckCircleIcon 
+                      sx={{ 
+                        color: '#fbbf24', 
+                        mr: { xs: 0.8, sm: 1 },
+                        fontSize: { xs: '1.2rem', sm: '1.5rem' }
+                      }} 
+                    />
+                    <Typography 
+                      variant="body1" 
+                      sx={{ 
+                        color: 'rgba(255, 255, 255, 0.95)', 
+                        fontWeight: 600,
+                        fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
+                        textAlign: 'center',
+                        lineHeight: 1.3
+                      }}
+                    >
                       24/7 Support
                     </Typography>
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <CheckCircleIcon sx={{ color: '#fbbf24', mr: 1 }} />
-                    <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.95)', fontWeight: 500 }}>
+                  <Box 
+                    sx={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      p: { xs: 1.5, sm: 2 },
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      borderRadius: 2,
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      minHeight: { xs: '50px', sm: '60px' }
+                    }}
+                  >
+                    <CheckCircleIcon 
+                      sx={{ 
+                        color: '#fbbf24', 
+                        mr: { xs: 0.8, sm: 1 },
+                        fontSize: { xs: '1.2rem', sm: '1.5rem' }
+                      }} 
+                    />
+                    <Typography 
+                      variant="body1" 
+                      sx={{ 
+                        color: 'rgba(255, 255, 255, 0.95)', 
+                        fontWeight: 600,
+                        fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
+                        textAlign: 'center',
+                        lineHeight: 1.3
+                      }}
+                    >
                       Proven Results
                     </Typography>
                   </Box>
@@ -159,7 +254,8 @@ const Hero = () => {
                 animation: 'fadeInUp 1.4s ease-out',
                 flexDirection: { xs: 'column', sm: 'row' },
                 mx: 'auto',
-                maxWidth: { sm: '80%', md: '60%' }
+                maxWidth: { xs: '100%', sm: '80%', md: '60%' },
+                px: { xs: 2, sm: 0 }
               }}>
                 <Button
                   variant="contained"
@@ -168,14 +264,14 @@ const Hero = () => {
                   sx={{
                     backgroundColor: '#fbbf24',
                     color: '#12182b',
-                    px: { xs: 4, md: 6 },
-                    py: { xs: 1.8, md: 2.2 },
-                    fontSize: { xs: '1.1rem', md: '1.2rem' },
+                    px: { xs: 3, sm: 4, md: 6 },
+                    py: { xs: 1.5, sm: 1.8, md: 2.2 },
+                    fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                     fontWeight: 700,
                     borderRadius: 3,
                     boxShadow: '0 12px 30px rgba(251, 191, 36, 0.4)',
                     width: { xs: '100%', sm: 'auto' },
-                    maxWidth: { xs: '300px', sm: 'none' },
+                    maxWidth: { xs: '100%', sm: 'none' },
                     textTransform: 'none',
                     '&:hover': {
                       backgroundColor: '#f59e0b',
@@ -195,14 +291,14 @@ const Hero = () => {
                   sx={{
                     borderColor: 'rgba(255, 255, 255, 0.5)',
                     color: 'white',
-                    px: { xs: 4, md: 6 },
-                    py: { xs: 1.8, md: 2.2 },
-                    fontSize: { xs: '1.1rem', md: '1.2rem' },
+                    px: { xs: 3, sm: 4, md: 6 },
+                    py: { xs: 1.5, sm: 1.8, md: 2.2 },
+                    fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                     fontWeight: 700,
                     borderRadius: 3,
                     borderWidth: 2,
                     width: { xs: '100%', sm: 'auto' },
-                    maxWidth: { xs: '300px', sm: 'none' },
+                    maxWidth: { xs: '100%', sm: 'none' },
                     textTransform: 'none',
                     '&:hover': {
                       backgroundColor: 'rgba(255, 255, 255, 0.15)',
