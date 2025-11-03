@@ -128,7 +128,7 @@ const Hero = () => {
                 We provide comprehensive IT solutions, consulting services, and training programs to help businesses thrive in the digital era.
               </Typography>
               
-              {/* Key Benefits */}
+              {/* Key Benefits - Hidden on desktop view */}
               <Grid 
                 container 
                 spacing={{ xs: 1.5, sm: 2, md: 3 }} 
@@ -136,7 +136,8 @@ const Hero = () => {
                   mb: { xs: 4, sm: 5 }, 
                   maxWidth: { xs: '100%', sm: '90%', md: '70%' }, 
                   mx: 'auto',
-                  px: { xs: 2, sm: 0 }
+                  px: { xs: 2, sm: 0 },
+                  display: { xs: 'flex', sm: 'flex', md: 'none' }
                 }}
               >
                 <Grid item xs={12} sm={4}>
