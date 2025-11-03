@@ -131,21 +131,51 @@ const ProfessionalFooter = () => {
           <Grid item xs={12} md={4}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <Box
-                component="img"
-                src={companyInfo.logo}
-                alt="InnovaIT Logo"
+                component="a"
+                href="/"
                 sx={{
-                  width: 120,
-                  height: 60,
-                  borderRadius: 1,
-                  mr: 2
+                  display: 'block',
+                  width: { xs: 100, sm: 130, md: 150 },
+                  height: { xs: 50, sm: 65, md: 75 },
+                  borderRadius: 2,
+                  overflow: 'hidden',
+                  mr: 2,
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  '&:hover': {
+                    transform: 'scale(1.05)',
+                    boxShadow: 3,
+                  },
+                  textDecoration: 'none',
                 }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  console.log('Logo failed to load');
+              >
+                <Box
+                  component="img"
+                  src={companyInfo.logo}
+                  alt="InnovaIT Logo"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    display: 'block',
+                  }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    console.log('Logo failed to load');
+                  }}
+                />
+              </Box>
+              <Typography 
+                variant="h6" 
+                component="div" 
+                sx={{ 
+                  fontWeight: 700,
+                  background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' }
                 }}
-              />
-              <Typography variant="h6" component="div" sx={{ fontWeight: 700 }}>
+              >
                 {companyInfo.name}
               </Typography>
             </Box>
@@ -403,7 +433,7 @@ const ProfessionalFooter = () => {
           }}
         >
           <Typography variant="body2" color="text.secondary">
-            © {currentYear} InnovaIT Global LLC. All rights reserved.
+            © {currentYear} InnovaIT. All rights reserved.
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Designed and developed by{' '}

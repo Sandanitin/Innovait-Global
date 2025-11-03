@@ -38,7 +38,7 @@ const About = () => {
           color: 'primary.main',
           fontSize: { xs: '2rem', md: '3rem' }
         }}>
-          About InnovaIT Global
+          About InnovaIT
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom sx={{ 
           mb: 4, 
@@ -102,7 +102,7 @@ const About = () => {
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
             <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-              <strong>Innovait Global</strong> is a global IT consulting and technology services firm delivering comprehensive business and digital transformation solutions.
+              <strong>InnovaIT</strong> is a global IT consulting and technology services firm delivering comprehensive business and digital transformation solutions.
               With a strong foundation in innovation and technical excellence, we help organizations streamline operations, enhance customer experiences, and drive digital growth.
             </Typography>
             <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.8, fontWeight: 'bold', color: 'primary.main' }}>

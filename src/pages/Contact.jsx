@@ -1,4 +1,4 @@
-  import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   Container, 
   Typography, 
@@ -15,7 +15,9 @@ import {
   Snackbar,
   Alert,
   CircularProgress,
-  InputAdornment
+  InputAdornment,
+  Divider,
+  IconButton
 } from '@mui/material';
 import { 
   Email as EmailIcon,
@@ -32,6 +34,7 @@ import {
   Message as MessageIcon
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -102,12 +105,27 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
+    // EmailJS configuration - Direct configuration (without env variables)
+    const serviceID = 'service_b92ranz'; // Your EmailJS Service ID
+    const templateID = 'template_8yw4zjq'; // Your EmailJS Template ID
+    const userID = 'hblFaDFraqmnyTbZ_'; // Your EmailJS User ID
+    
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        from_company: formData.company,
+        from_phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'InnovaIT Team'
+      };
       
-      // Handle form submission here
-      console.log('Form submitted:', formData);
+      // Send email using EmailJS
+      const response = await emailjs.send(serviceID, templateID, templateParams, userID);
+      
+      console.log('Email sent successfully!', response);
       
       setSnackbarMessage('Thank you for your message! We will get back to you soon.');
       setSnackbarSeverity('success');
@@ -122,7 +140,37 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
-      setSnackbarMessage('Failed to send message. Please try again.');
+      console.error('Failed to send email:', error);
+      
+      // More detailed error handling
+      let errorMessage = 'Failed to send message. Please try again.';
+      
+      if (error.text) {
+        console.error('EmailJS Error Text:', error.text);
+        errorMessage += ' Error: ' + error.text;
+      }
+      
+      if (error.status) {
+        console.error('EmailJS Error Status:', error.status);
+        
+        if (error.status === 401) {
+          errorMessage = 'Authentication failed. Please check your EmailJS credentials.';
+        } else if (error.status === 400) {
+          errorMessage = 'Bad request. Please check your EmailJS configuration.';
+        } else if (error.status === 403) {
+          errorMessage = 'Forbidden. Please check your EmailJS domain restrictions.';
+        } else if (error.status === 429) {
+          errorMessage = 'Too many requests. Please try again later.';
+        }
+      }
+      
+      // Check if credentials are still using placeholder values
+      if (errorMessage.includes('Please try again') && 
+          (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID' || userID === 'YOUR_USER_ID')) {
+        errorMessage = 'Please configure your EmailJS credentials in the Contact.jsx file.';
+      }
+      
+      setSnackbarMessage(errorMessage);
       setSnackbarSeverity('error');
       setOpenSnackbar(true);
     } finally {
@@ -134,8 +182,6 @@ const Contact = () => {
     setOpenSnackbar(false);
   };
 
-  const contactInfo = [
-  ];
 
   const services = [
     'IT Consulting & Strategy',
@@ -182,93 +228,47 @@ const Contact = () => {
       </Box>
 
       <Grid container spacing={{ xs: 3, md: 5 }}>
-        {/* Contact Information - Enhanced UI */}
         <Grid item xs={12} lg={5}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            {/* Contact Cards - Enhanced styling */}
-            {contactInfo.map((info, index) => (
-              <Card key={index} sx={{ 
-                borderRadius: 3,
-                transition: 'all 0.3s ease-in-out',
+          <Paper elevation={0} sx={{ 
+            p: { xs: 3, md: 4 },
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%)',
+            border: '1px solid rgba(0, 0, 0, 0.08)',
+            borderRadius: 3,
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)'
+          }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <Box sx={{ 
+                width: 56, 
+                height: 56, 
+                borderRadius: '50%', 
+                backgroundColor: 'primary.main',
                 display: 'flex',
                 alignItems: 'center',
-                p: 2.5,
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-                border: '1px solid rgba(0, 0, 0, 0.05)',
-                '&:hover': {
-                  transform: 'translateY(-2px)',
-                  boxShadow: `0 6px 15px ${info.color}20`,
-                }
+                justifyContent: 'center',
+                mr: 2
               }}>
-                <Box sx={{ 
-                  width: 56, 
-                  height: 56, 
-                  borderRadius: '50%', 
-                  backgroundColor: `${info.color}10`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  mr: 2
-                }}>
-                  {info.icon}
-                </Box>
-                <Box>
-                  <Typography variant="h6" component="h3" gutterBottom sx={{ fontWeight: 600, fontSize: '1.1rem', mb: 0.5 }}>
-                    {info.title}
-                  </Typography>
-                  <Typography variant="body1" sx={{ fontWeight: 500, mb: 0.3, fontSize: '0.95rem' }}>
-                    {info.details}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.85rem' }}>
-                    {info.description}
-                  </Typography>
-                </Box>
-              </Card>
-            ))}
-
-            {/* Business Hours - Enhanced styling */}
-            <Card sx={{ 
-              borderRadius: 3, 
-              p: 2.5,
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-              border: '1px solid rgba(0, 0, 0, 0.05)'
-            }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <Box sx={{ 
-                  width: 56, 
-                  height: 56, 
-                  borderRadius: '50%', 
-                  backgroundColor: 'primary.main',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  mr: 2
-                }}>
-                  <ScheduleIcon sx={{ fontSize: 24, color: 'white' }} />
-                </Box>
-                <Typography variant="h6" component="h3" sx={{ fontWeight: 600, fontSize: '1.1rem' }}>
-                  Business Hours
-                </Typography>
+                <ScheduleIcon sx={{ fontSize: 24, color: 'white' }} />
               </Box>
-              <Box sx={{ pl: 7 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1, borderBottom: '1px solid rgba(0, 0, 0, 0.05)' }}>
-                  <Typography variant="body1">Monday - Friday</Typography>
-                  <Typography variant="body1" fontWeight={500}>9:00 AM - 6:00 PM</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1, borderBottom: '1px solid rgba(0, 0, 0, 0.05)' }}>
-                  <Typography variant="body1">Saturday</Typography>
-                  <Typography variant="body1" fontWeight={500}>10:00 AM - 4:00 PM</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1 }}>
-                  <Typography variant="body1">Sunday</Typography>
-                  <Typography variant="body1" fontWeight={500} color="error.main">Closed</Typography>
-                </Box>
+              <Typography variant="h6" component="h3" sx={{ fontWeight: 600, fontSize: '1.1rem' }}>
+                Business Hours
+              </Typography>
+            </Box>
+            <Box sx={{ pl: 7 }}>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1, borderBottom: '1px solid rgba(0, 0, 0, 0.05)' }}>
+                <Typography variant="body1">Monday - Friday</Typography>
+                <Typography variant="body1" fontWeight={500}>9:00 AM - 6:00 PM</Typography>
               </Box>
-            </Card>
-          </Box>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1, borderBottom: '1px solid rgba(0, 0, 0, 0.05)' }}>
+                <Typography variant="body1">Saturday</Typography>
+                <Typography variant="body1" fontWeight={500}>10:00 AM - 4:00 PM</Typography>
+              </Box>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1 }}>
+                <Typography variant="body1">Sunday</Typography>
+                <Typography variant="body1" fontWeight={500} color="error.main">Closed</Typography>
+              </Box>
+            </Box>
+          </Paper>
         </Grid>
-
-        {/* Contact Form - Enhanced UI */}
         <Grid item xs={12} lg={7}>
           <Paper elevation={0} sx={{ 
             p: { xs: 3, md: 4 },
@@ -597,7 +597,7 @@ const Contact = () => {
         borderRadius: 3,
       }}>
         <Typography variant="h5" component="h2" gutterBottom align="center" sx={{ mb: 3, fontWeight: 700, fontSize: '1.5rem' }}>
-          Why Choose InnovaITGlobal?
+          Why Choose InnovaIT?
         </Typography>
         
         <Grid container spacing={1.5}>

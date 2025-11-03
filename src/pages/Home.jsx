@@ -171,7 +171,7 @@ const Home = () => {
           "For an advanced world for you and me, Innovation holds the key"
         </Typography>
         <Typography variant="h6" paragraph sx={{ fontSize: '1.2rem', lineHeight: 1.8, color: 'text.secondary' }}>
-          Innovation: The driving force behind a smarter, more advanced world for all. Unlocking new possibilities, and shaping the future with relentless dedication. We lead the way in progress at InnovaIT Global—seamlessly and boldly.
+          Innovation: The driving force behind a smarter, more advanced world for all. Unlocking new possibilities, and shaping the future with relentless dedication. We lead the way in progress at InnovaIT—seamlessly and boldly.
         </Typography>
       </Paper>
 
@@ -327,14 +327,14 @@ const Home = () => {
 
       {/* Why Choose Us Section */}
       <Typography variant="h3" component="h2" gutterBottom align="center" sx={{ mb: 2, fontWeight: 700 }}>
-        WHY INNOVAIT GLOBAL?
+        WHY CHOOSE INNOVAIT?
       </Typography>
       <Typography variant="h4" component="h3" gutterBottom align="center" sx={{ mb: 6, fontWeight: 600, color: 'text.secondary' }}>
         Your vision. Our innovation: IT solutions.
       </Typography>
       
       <Typography variant="body1" paragraph align="center" sx={{ mb: 6, fontSize: '1.1rem', lineHeight: 1.8 }}>
-        Innovait Global focuses on delivering quality work with maintaining a cordial relationship with its clients. Our excellent record of innovative Staffing and Consulting solutions make us reliable partners for all your IT needs.
+        Innovait focuses on delivering quality work with maintaining a cordial relationship with its clients. Our excellent record of innovative Staffing and Consulting solutions make us reliable partners for all your IT needs.
       </Typography>
 
       <Grid container spacing={4} sx={{ mb: 8 }}>
@@ -373,7 +373,7 @@ const Home = () => {
         Experience and innovation in a single touch.
       </Typography>
       <Typography variant="body1" paragraph align="center" sx={{ mb: 6, fontSize: '1.1rem', lineHeight: 1.8 }}>
-     InnovaIT Global has structured itself strategically to provide some of the most cutting-edge solutions for its clients.
+     InnovaIT has structured itself strategically to provide some of the most cutting-edge solutions for its clients.
       </Typography>
 
       <Grid container spacing={4} sx={{ mb: 8 }}>
@@ -421,7 +421,7 @@ const Home = () => {
           Build Beneficial Partnership With Us
         </Typography>
         <Typography variant="body1" paragraph align="center" sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.8 }}>
-          Build beneficial partnership with us and gain access to the best IT talent across USA. Innovait Global has strategically aligned itself to develop some of the most innovative solutions for its clients. From providing turnkey project-based solutions to on-demand staff augmentation to application development services, Innovait Global can be your long-term strategic partner.
+          Build beneficial partnership with us and gain access to the best IT talent across USA. Innovait has strategically aligned itself to develop some of the most innovative solutions for its clients. From providing turnkey project-based solutions to on-demand staff augmentation to application development services, Innovait can be your long-term strategic partner.
         </Typography>
         <Box sx={{ textAlign: 'center' }}>
           <Button
