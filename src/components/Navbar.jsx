@@ -69,14 +69,8 @@ const Navbar = () => {
                    width: 'auto',
                    objectFit: 'contain',
                    mr: 1.5,
-                   filter: 'drop-shadow(0 4px 12px rgba(30, 58, 138, 0.2))',
-                   transition: 'all 0.3s ease-in-out',
-                   borderRadius: '8px',
-                   border: '2px solid rgba(30, 58, 138, 0.1)',
-                   '&:hover': {
-                     filter: 'drop-shadow(0 6px 16px rgba(30, 58, 138, 0.3))',
-                     borderColor: 'rgba(30, 58, 138, 0.3)',
-                   }
+                   
+                   
                  }}
                />
                {!isMobile && (
