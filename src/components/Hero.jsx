@@ -65,14 +65,14 @@ const Hero = () => {
                 label="Trusted by Industry Leaders" 
                 sx={{ 
                   mb: 3, 
-                  backgroundColor: 'rgba(255, 255, 255, 0.15)',
-                  color: '#fbbf24',
+                  backgroundColor: 'rgba(33, 150, 243, 0.2)',
+                  color: '#2196F3',
                   fontWeight: 600,
                   fontSize: { xs: '0.8rem', sm: '0.85rem' },
                   height: '32px',
                   animation: 'fadeInUp 0.5s ease-out',
                   '& .MuiChip-icon': {
-                    color: '#fbbf24',
+                    color: '#2196F3',
                     fontSize: '1.2rem',
                   }
                 }} 
@@ -99,7 +99,7 @@ const Hero = () => {
               >
                 Empowering Innovation.
                 <span style={{ 
-                  background: 'linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%)',
+                  background: 'linear-gradient(45deg, #2196F3, #03A9F4)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   fontWeight: 900,
@@ -263,21 +263,21 @@ const Hero = () => {
                   size="large"
                   endIcon={<ArrowForwardIcon />}
                   sx={{
-                    backgroundColor: '#fbbf24',
-                    color: '#12182b',
+                    backgroundColor: '#2196F3',
+                    color: 'white',
                     px: { xs: 3, sm: 4, md: 6 },
                     py: { xs: 1.5, sm: 1.8, md: 2.2 },
                     fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                     fontWeight: 700,
                     borderRadius: 3,
-                    boxShadow: '0 12px 30px rgba(251, 191, 36, 0.4)',
+                    boxShadow: '0 12px 30px rgba(33, 150, 243, 0.4)',
                     width: { xs: '100%', sm: 'auto' },
                     maxWidth: { xs: '100%', sm: 'none' },
                     textTransform: 'none',
                     '&:hover': {
-                      backgroundColor: '#f59e0b',
+                      backgroundColor: '#03A9F4',
                       transform: 'translateY(-5px)',
-                      boxShadow: '0 16px 40px rgba(251, 191, 36, 0.5)',
+                      boxShadow: '0 16px 40px rgba(33, 150, 243, 0.5)',
                     },
                     transition: 'all 0.4s ease-in-out',
                     animation: 'pulse 2s infinite',
