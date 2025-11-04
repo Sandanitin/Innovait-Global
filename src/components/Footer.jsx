@@ -45,7 +45,7 @@ const ProfessionalFooter = () => {
   const companyInfo = {
     name: "",
     description: "Delivering innovative technology solutions to drive your business forward in the digital age.",
-    logo: "/logo.png" // Using actual logo image
+    logo: "/logo.jpg" // Using actual logo image
   };
 
   const quickLinks = [

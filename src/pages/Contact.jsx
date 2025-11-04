@@ -228,48 +228,7 @@ const Contact = () => {
       </Box>
 
       <Grid container spacing={{ xs: 3, md: 5 }}>
-        <Grid item xs={12} lg={5}>
-          <Paper elevation={0} sx={{ 
-            p: { xs: 3, md: 4 },
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%)',
-            border: '1px solid rgba(0, 0, 0, 0.08)',
-            borderRadius: 3,
-            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)'
-          }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-              <Box sx={{ 
-                width: 56, 
-                height: 56, 
-                borderRadius: '50%', 
-                backgroundColor: 'primary.main',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                mr: 2
-              }}>
-                <ScheduleIcon sx={{ fontSize: 24, color: 'white' }} />
-              </Box>
-              <Typography variant="h6" component="h3" sx={{ fontWeight: 600, fontSize: '1.1rem' }}>
-                Business Hours
-              </Typography>
-            </Box>
-            <Box sx={{ pl: 7 }}>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1, borderBottom: '1px solid rgba(0, 0, 0, 0.05)' }}>
-                <Typography variant="body1">Monday - Friday</Typography>
-                <Typography variant="body1" fontWeight={500}>9:00 AM - 6:00 PM</Typography>
-              </Box>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1, borderBottom: '1px solid rgba(0, 0, 0, 0.05)' }}>
-                <Typography variant="body1">Saturday</Typography>
-                <Typography variant="body1" fontWeight={500}>10:00 AM - 4:00 PM</Typography>
-              </Box>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1 }}>
-                <Typography variant="body1">Sunday</Typography>
-                <Typography variant="body1" fontWeight={500} color="error.main">Closed</Typography>
-              </Box>
-            </Box>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} lg={7}>
+        <Grid item xs={12}>
           <Paper elevation={0} sx={{ 
             p: { xs: 3, md: 4 },
             background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%)',
