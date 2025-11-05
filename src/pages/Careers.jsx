@@ -310,8 +310,9 @@ const Careers = () => {
               color: 'text.primary'
             }}
           >
-            We're always open to meeting new talent! Fill out the form on our 
-            <Button 
+            We're always open to meeting new talent! Fill out the form on our Contact page 
+            and submit your details — our recruitment team will get in touch with you when a suitable position opens.
+            {/* <Button 
               onClick={() => navigate('/contact')}
               sx={{ 
                 mx: 1,
@@ -326,8 +327,8 @@ const Careers = () => {
               }}
             >
               Contact Page
-            </Button> 
-            and submit your details — our recruitment team will get in touch with you when a suitable position opens.
+            </Button>  */}
+             
           </Typography>
           <Button
             variant="contained"

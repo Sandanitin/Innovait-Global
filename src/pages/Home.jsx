@@ -77,9 +77,9 @@ const Home = () => {
       image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
-      icon: <PsychologyIcon sx={{ fontSize: 60, color: 'primary.main' }} />,
+      icon: <PsychologyIcon sx={{ fontSize: 110, color: 'primary.main' }} />,
       title: 'Core Values',
-      description: 'We keep the values learnt back home alive. These represent in our daily endeavours and reflects well in the delivering of service to our clients.',
+      description: 'We keep the values learnt back home alive. These represent in our daily endeavours and reflects well in the delivering of service to our clients.                                                                                                                  .',
       bgColor: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(30, 58, 138, 0.1) 100%)',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     }
