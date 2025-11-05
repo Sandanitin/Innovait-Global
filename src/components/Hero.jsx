@@ -285,32 +285,6 @@ const Hero = () => {
                 >
                   Get Started Today
                 </Button>
-                
-                <Button
-                  variant="outlined"
-                  size="large"
-                  sx={{
-                    borderColor: 'rgba(255, 255, 255, 0.5)',
-                    color: 'white',
-                    px: { xs: 3, sm: 4, md: 6 },
-                    py: { xs: 1.5, sm: 1.8, md: 2.2 },
-                    fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
-                    fontWeight: 700,
-                    borderRadius: 3,
-                    borderWidth: 2,
-                    width: { xs: '100%', sm: 'auto' },
-                    maxWidth: { xs: '100%', sm: 'none' },
-                    textTransform: 'none',
-                    '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.15)',
-                      borderColor: 'rgba(255, 255, 255, 0.8)',
-                      transform: 'translateY(-5px)',
-                    },
-                    transition: 'all 0.4s ease-in-out',
-                  }}
-                >
-                  View Our Work
-                </Button>
               </Box>
             </Box>
           </Grid>
