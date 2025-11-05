@@ -30,28 +30,23 @@ const Careers = () => {
   const benefits = [
     {
       icon: <PublicIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
-      title: 'Opportunities with Global Clients',
-      emoji: '🌍'
+      title: 'Opportunities with Global Clients'
     },
     {
       icon: <SchoolIcon sx={{ fontSize: 40, color: 'secondary.main' }} />,
-      title: 'Continuous Learning & Certification Programs',
-      emoji: '🎓'
+      title: 'Continuous Learning & Certification Programs'
     },
     {
       icon: <AttachMoneyIcon sx={{ fontSize: 40, color: 'success.main' }} />,
-      title: 'Competitive Salary Packages',
-      emoji: '💰'
+      title: 'Competitive Salary Packages'
     },
     {
       icon: <HomeIcon sx={{ fontSize: 40, color: 'info.main' }} />,
-      title: 'Hybrid & Remote Work Options',
-      emoji: '🏠'
+      title: 'Hybrid & Remote Work Options'
     },
     {
       icon: <PeopleIcon sx={{ fontSize: 40, color: 'warning.main' }} />,
-      title: 'Inclusive and Collaborative Work Culture',
-      emoji: '🤝'
+      title: 'Inclusive and Collaborative Work Culture'
     }
   ];
 
@@ -66,19 +61,16 @@ const Careers = () => {
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
       {/* Hero Section */}
-      <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 10 } }}>
+      <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 8 } }}>
         <Typography 
-          variant="h1" 
+          variant="h2" 
           component="h1" 
           gutterBottom 
           sx={{ 
-            mb: 4, 
+            mb: 3, 
             fontWeight: 800, 
-            background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #f59e0b 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            fontSize: { xs: '2.2rem', md: '3.8rem' },
+            color: 'primary.main',
+            fontSize: { xs: '1.8rem', md: '2.8rem' },
             lineHeight: 1.2
           }}
         >
@@ -145,73 +137,64 @@ const Careers = () => {
           </Typography>
         </Box>
         
-        {/* Enhanced Benefits Layout */}
-        <Box 
+        {/* Enhanced Benefits Layout - 5 Column Responsive Grid */}
+        <Grid 
+          container 
+          spacing={{ xs: 2, sm: 3, md: 4 }}
           sx={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            justifyContent: 'center', 
-            gap: { xs: 2.5, md: 4 },
-            mb: 3
+            mb: { xs: 3, md: 4 }
           }}
         >
           {benefits.map((benefit, index) => (
-            <Box 
+            <Grid 
+              item 
+              xs={12} 
+              sm={6} 
+              md={2.4} 
               key={index}
-              sx={{ 
-                display: 'flex', 
-                flexDirection: 'column', 
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
                 alignItems: 'center',
-                textAlign: 'center',
-                width: { xs: '45%', sm: '30%', md: '18%' },
-                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                '&:hover': {
-                  transform: 'translateY(-8px) scale(1.03)',
-                }
+                textAlign: 'center'
               }}
             >
               <Box 
                 sx={{ 
-                  mb: 2,
-                  width: 80,
-                  height: 80,
+                  mb: { xs: 2, md: 2.5 },
+                  width: { xs: 60, sm: 65, md: 70 },
+                  height: { xs: 60, sm: 65, md: 70 },
                   borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)',
-                  boxShadow: '0 8px 20px rgba(30, 58, 138, 0.15)',
-                  border: '1px solid rgba(30, 58, 138, 0.2)'
+                  boxShadow: '0 6px 15px rgba(30, 58, 138, 0.12)',
+                  border: '1px solid rgba(30, 58, 138, 0.15)',
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'scale(1.1)',
+                    boxShadow: '0 8px 20px rgba(30, 58, 138, 0.2)',
+                  }
                 }}
               >
                 {benefit.icon}
               </Box>
               <Typography 
-                variant="h6"
+                variant="body2"
                 sx={{ 
-                  fontWeight: 700, 
-                  mb: 1.5,
-                  fontSize: { xs: '0.9rem', md: '1.1rem' },
+                  fontWeight: 600, 
+                  mb: 1,
+                  fontSize: { xs: '0.8rem', sm: '0.85rem', md: '0.9rem' },
                   color: 'primary.main',
                   lineHeight: 1.3
                 }}
               >
                 {benefit.title}
               </Typography>
-              <Typography 
-                variant="h1" 
-                sx={{ 
-                  color: 'text.primary',
-                  lineHeight: 1,
-                  fontSize: '3rem',
-                  mt: 0.5
-                }}
-              >
-                {benefit.emoji}
-              </Typography>
-            </Box>
+            </Grid>
           ))}
-        </Box>
+        </Grid>
       </Paper>
 
       {/* Current Openings */}

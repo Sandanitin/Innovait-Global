@@ -427,12 +427,20 @@ const Home = () => {
           <Button
             variant="contained"
             size="large"
+            onClick={() => navigate('/careers')}
             sx={{
               px: 6,
               py: 2,
               fontSize: '1.1rem',
               fontWeight: 600,
               borderRadius: 3,
+              background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #f59e0b 100%)',
+              '&:hover': {
+                background: 'linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #d97706 100%)',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 8px 25px rgba(30, 58, 138, 0.3)',
+              },
+              transition: 'all 0.3s ease-in-out',
             }}
           >
             Join Us
