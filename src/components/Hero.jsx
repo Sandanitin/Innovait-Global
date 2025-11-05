@@ -5,8 +5,11 @@ import {
   FlashOn as FlashOnIcon,
   CheckCircle as CheckCircleIcon
 } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   return (
     <Box
       sx={{
@@ -262,6 +265,7 @@ const Hero = () => {
                   variant="contained"
                   size="large"
                   endIcon={<ArrowForwardIcon />}
+                  onClick={() => navigate('/contact')}
                   sx={{
                     backgroundColor: '#2196F3',
                     color: 'white',
