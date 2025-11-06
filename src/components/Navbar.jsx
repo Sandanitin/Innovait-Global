@@ -66,10 +66,10 @@ const Navbar = () => {
                  src="/logo.jpg"
                  alt="InnovaIT Logo"
                  sx={{
-                   height: { xs: 40, sm: 45, md: 50 },
+                   height: { xs: 60, sm: 65, md: 70 },
                    width: 'auto',
                    objectFit: 'contain',
-                   mr: 1.5,
+                   mr: 2,
                    
                    
                  }}

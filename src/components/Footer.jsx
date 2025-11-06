@@ -433,7 +433,7 @@ const ProfessionalFooter = () => {
           }}
         >
           <Typography variant="body2" color="text.secondary">
-            © {currentYear} InnovaIT. All rights reserved.
+            © {currentYear} InnovaIT Global LLC. All rights reserved.
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Designed and developed by{' '}

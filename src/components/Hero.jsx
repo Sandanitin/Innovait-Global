@@ -100,7 +100,7 @@ const Hero = () => {
                   px: { xs: 2, sm: 0 }
                 }}
               >
-                Empowering Innovation.
+                 Delivering Excellence by
                 <span style={{ 
                   background: 'linear-gradient(45deg, #2196F3, #03A9F4)',
                   WebkitBackgroundClip: 'text',
@@ -108,19 +108,19 @@ const Hero = () => {
                   fontWeight: 900,
                   fontFamily: 'inherit',
                 }}>
-                  Delivering Excellence.
+                  Connecting Top Talent with Technology
                 </span>
               </Typography>
               
               <Typography 
-                variant="h5" 
+                variant="h6" 
                 component="p" 
                 sx={{ 
                   mb: { xs: 3, md: 5 }, 
                   color: 'rgba(255, 255, 255, 0.95)',
-                  lineHeight: { xs: 1.5, md: 1.7 },
+                  lineHeight: { xs: 1.5, md: 1.6 },
                   fontWeight: 400,
-                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
+                  fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
                   maxWidth: { xs: '100%', sm: '90%', md: '70%' },
                   mx: 'auto',
                   animation: 'fadeInUp 1.1s ease-out',
@@ -128,7 +128,7 @@ const Hero = () => {
                   px: { xs: 2, sm: 0 }
                 }}
               >
-                We provide comprehensive IT solutions, consulting services, and training programs to help businesses thrive in the digital era.
+                At InnovaIT Global, we empower businesses with innovative IT solutions, strategic consulting, and expert talent services to drive growth in the digital era. From cloud and automation to IT sales and recruiting, we deliver tailored strategies that transform operations and build the future of your business.
               </Typography>
               
               {/* Key Benefits - Hidden on desktop view */}
