@@ -69,7 +69,7 @@ const ProfessionalFooter = () => {
   ];
 
   const socialLinks = [
-    { icon: <LinkedInIcon />, name: "LinkedIn", url: "https://linkedin.com" },
+    { icon: <LinkedInIcon />, name: "LinkedIn", url: "https://www.linkedin.com/company/109610393" },
     { icon: <TwitterIcon />, name: "Twitter", url: "https://twitter.com" },
     { icon: <FacebookIcon />, name: "Facebook", url: "https://facebook.com" },
     { icon: <GitHubIcon />, name: "GitHub", url: "https://github.com" }
